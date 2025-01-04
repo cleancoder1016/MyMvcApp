@@ -1,16 +1,19 @@
-using Microsoft.EntityFrameworkCore;
+
 using MyMvcApp.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace MyMvcApp.Data
 {
     public class UsersContext : DbContext
     {
-        public UsersContext (DbContextOptions<UsersContext> options)
-            : base(options)
+        public UsersContext ( DbContextOptions<UsersContext> options) : base(options)
         {
+
         }
         
 
-        public Dbset<User> Users {get; set;}
+        public DbSet<User> Users {get; set;}
     }
+
+   
 }

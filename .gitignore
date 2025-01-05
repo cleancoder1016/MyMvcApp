@@ -1,2 +1,59 @@
-/bin/
-/obj/
+# Ignore build and output directories
+[Bb]in/
+[Oo]bj/
+
+# Ignore user-specific files
+*.user
+*.suo
+*.userprefs
+*.userosscache
+
+# Ignore IDE-specific files
+.vs/
+.idea/
+.vscode/
+
+# Ignore NuGet packages and restore files
+.nuget/
+packages/
+*.nupkg
+NuGet.exe
+NuGet.Config
+
+# Ignore local development files
+appsettings.Development.json
+
+# Ignore compiled files
+*.dll
+*.pdb
+*.exe
+
+# Ignore logs and diagnostics
+logs/
+*.log
+*.sln.iml
+
+# Ignore Azure and deployment files
+*.azurepubxml
+*.pubxml
+*.publishsettings
+
+# Ignore test results
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+
+# Ignore ReSharper files
+_ReSharper.*
+*.ReSharper
+
+# Ignore Rider files
+.idea/
+*.sln.iml
+
+# Ignore macOS files
+.DS_Store
+
+# Ignore Node.js and frontend build files
+node_modules/
+wwwroot/lib/
+dist/

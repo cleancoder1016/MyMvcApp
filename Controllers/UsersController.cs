@@ -59,8 +59,9 @@ namespace MyMvcApp.Controllers
         public async Task<IActionResult> Create([Bind("ID,Name,Email,Password,PhoneNumber,IsActive")] User user)
         {
             if (ModelState.IsValid)
-            {
-                await _context.Users.AddAsync(user);
+            {   
+                user.IsActive = true;
+                _context.Add(user);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }

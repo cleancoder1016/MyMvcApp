@@ -10,8 +10,8 @@ using MyMvcApp.Data;
 namespace MyMvcApp.Migrations
 {
     [DbContext(typeof(UsersContext))]
-    [Migration("20250104154050_Initiate")]
-    partial class Initiate
+    [Migration("20250104213839_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

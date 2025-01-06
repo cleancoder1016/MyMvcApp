@@ -37,11 +37,11 @@ namespace MyMvcApp.Controllers.Api
 
         [HttpGet]
 
-        public IEnumerable<User> GetUsers()
+        public async Task<IEnumerable<User>> GetUsers()
 
         {
 
-            return _user.GetAllUsers();
+            return await _user.GetAllUsers();
 
         }
 
@@ -51,11 +51,11 @@ namespace MyMvcApp.Controllers.Api
 
         [HttpGet("{id}")]
 
-        public ActionResult<User> GetUser(int id)
+        public async Task<ActionResult<User>> GetUser(int id)
 
         {
 
-            var user = _user.GetUserById(id);
+            var user = await _user.GetUserById(id);
 
 
 
@@ -75,10 +75,10 @@ namespace MyMvcApp.Controllers.Api
         // GET: api/Users/Name/James%20Bond
 
         [HttpGet("Name/{name}")]
-        public IEnumerable<User> GetUserByName(string name)
+        public async Task<IEnumerable<User>> GetUserByName(string name)
         {
 
-            return _user.GetUserByName(name);
+            return await _user.GetUserByName(name);
         }
 
 
@@ -86,7 +86,7 @@ namespace MyMvcApp.Controllers.Api
 
         [HttpPut("{id}")]
 
-        public IActionResult PutUser(int id, User user)
+        public async Task<IActionResult> PutUser(int id, User user)
 
         {
 
@@ -98,7 +98,7 @@ namespace MyMvcApp.Controllers.Api
 
             }
 
-            _user.UpdateUser(user);
+            await _user.UpdateUser(user);
 
 
 
@@ -112,11 +112,11 @@ namespace MyMvcApp.Controllers.Api
 
         [HttpDelete("{id}")]
 
-        public ActionResult<User> DeleteUser(int id)
+        public async Task<ActionResult<User>> DeleteUser(int id)
 
         {
 
-            var user = _user.GetUserById(id);
+            var user = await _user.GetUserById(id);
 
             if (user == null)
 
@@ -128,7 +128,7 @@ namespace MyMvcApp.Controllers.Api
 
 
 
-            _user.DeleteUser(id);
+            await _user.DeleteUser(id);
 
 
 

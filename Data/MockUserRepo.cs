@@ -14,43 +14,43 @@ namespace MyMvcApp.Data
             new User { ID = 5, Name = "Neo Keyanu", Email = "Neo@Matrix.com", Password = "Password", PhoneNumber = "0000000000", IsActive = true}
         };
 
-        public User CreateUser(User user)
+        public async Task<User> CreateUser(User user)
         {
             users.Add(user);
             return user;
         }
 
-        public User DeleteUser(int id)
+        public Task<User> DeleteUser(int id)
         {
             var user = users.Find(result => result.ID == id);
             users.Remove(user);
-            return user;
+            return Task.FromResult(user);
         }
 
-        public IEnumerable<User> GetAllUsers()
+        public Task<IEnumerable<User>> GetAllUsers()
         {
-            return users;
+            return Task.FromResult(users.AsEnumerable());
         }
 
-        public User GetUserById(int id)
+        public Task<User> GetUserById(int id)
         {
             var user = users.Find(result => result.ID == id);
-            return user;
+            return Task.FromResult(user);
         }
 
-        public IEnumerable<User> GetUserByName(string name)
+        public Task<IEnumerable<User>> GetUserByName(string name)
         {
             name = name.ToLower();
             var user = users.FindAll(result => result.Name.ToLower().Contains(name));
-            return user;
+            return Task.FromResult<IEnumerable<User>>(user);
         }
 
-        public User UpdateUser(User user)
+        public Task<User> UpdateUser(User user)
         {
             var oldUser = users.Find(result => result.ID == user.ID);
             users.Remove(oldUser);
             users.Add(user);
-            return user;
+            return Task.FromResult(user);
         }
     }
 }

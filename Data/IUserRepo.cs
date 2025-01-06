@@ -5,11 +5,11 @@ namespace MyMvcApp.Data
 {
     public interface IUserRepo
     {
-        User CreateUser(User user);
-        IEnumerable<User> GetAllUsers();
-        User GetUserById(int id);
-        IEnumerable<User> GetUserByName(string name);
-        User UpdateUser(User user);
-        User DeleteUser(int id);
+        Task<User> CreateUser(User user);
+        Task<IEnumerable<User>> GetAllUsers();
+        Task<User> GetUserById(int id);
+        Task<IEnumerable<User>> GetUserByName(string name);
+        Task<User> UpdateUser(User user);
+        Task<User> DeleteUser(int id);
     }
 }

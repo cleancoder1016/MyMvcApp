@@ -24,7 +24,7 @@ namespace MyMvcApp.Controllers
         // GET: Users
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Users.ToListAsync());
+            return View(await _context.Users.FromSqlRaw("select * from Users").ToListAsync());
         }
 
 
@@ -36,7 +36,7 @@ namespace MyMvcApp.Controllers
                 return NotFound();
             }
 
-            var user = await _context.Users.FirstOrDefaultAsync(m => m.ID == id);
+            var user = await _context.Users.FromSqlRaw($"select * from Users where ID={id}").FirstOrDefaultAsync();
             
             if (user == null)
             {
@@ -145,6 +145,19 @@ namespace MyMvcApp.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
+
+        // GET: Users/InActive
+        public async Task<IActionResult> InActive()
+        {
+          return View(await _context.Users.FromSqlRaw("select * from Users where IsActive=0 order by Name asc").ToListAsync());
+        }
+
+        // GET: Users/Active
+        public async Task<IActionResult> Active()
+        {
+          return View(await _context.Users.FromSqlRaw("select * from Users where IsActive=1 order by Name asc").ToListAsync());
+        }
+
 
         private bool UserExists(int id)
         {

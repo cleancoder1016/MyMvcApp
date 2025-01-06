@@ -41,6 +41,12 @@ namespace MyMvcApp.Data
             return user;
         }
 
+        public IEnumerable<User> GetUserByName(string name)
+        {
+            name = name.ToLower();
+            var allUsers = _context.Users.ToList().FindAll(result => result.Name.ToLower().Contains(name));
+            return allUsers;
+        }
         public User UpdateUser(User user)
         {
             _context.Update(user);

@@ -72,6 +72,15 @@ namespace MyMvcApp.Controllers.Api
         }
 
 
+        // GET: api/Users/Name/James%20Bond
+
+        [HttpGet("Name/{name}")]
+        public IEnumerable<User> GetUserByName(string name)
+        {
+
+            return _user.GetUserByName(name);
+        }
+
 
         // PUT: api/Users/5
 

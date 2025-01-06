@@ -8,6 +8,7 @@ namespace MyMvcApp.Data
         User CreateUser(User user);
         IEnumerable<User> GetAllUsers();
         User GetUserById(int id);
+        IEnumerable<User> GetUserByName(string name);
         User UpdateUser(User user);
         User DeleteUser(int id);
     }

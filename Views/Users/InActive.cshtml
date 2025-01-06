@@ -1,18 +1,19 @@
 @model IEnumerable<MyMvcApp.Models.User>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "InActive";
 }
 
-<h1>Index</h1>
+<h1>Inactive Users</h1>
 
 <p>
     <a asp-action="Create">Create New </a>
     |
-    <a asp-action="Active"> Active Users </a>
+    <a asp-action="Index"> Active Users </a>
     |
     <a asp-action="InActive"> InActive Users</a>
 </p>
+
 <table class="table">
     <thead>
         <tr>

@@ -2,7 +2,98 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container mt-5">
+    <div class="text-center">
+        <h1 class="display-4 text-primary">User Management System</h1>
+        <p class="lead">This project is developed using .NET Core MVC and is a User Management System. It allows you to create, read, update, and delete user information. The application is coded using asynchronous methods to make use of multi-threaded processes for better performance.</p>
+    </div>
+
+    <div class="mt-4">
+        <h2 class="text-success">Features</h2>
+        <ul class="list-group">
+            <li class="list-group-item">Create new users</li>
+            <li class="list-group-item">Read user information</li>
+            <li class="list-group-item">Update existing user information</li>
+            <li class="list-group-item">Delete users</li>
+            <li class="list-group-item">Asynchronous operations for improved performance</li>
+        </ul>
+    </div>
+
+    <div class="mt-4">
+        <h2 class="text-success">Technologies Used</h2>
+        <ul class="list-group">
+            <li class="list-group-item">.NET Core MVC</li>
+            <li class="list-group-item">Entity Framework Core</li>
+            <li class="list-group-item">SQLite3 (or your preferred database)</li>
+            <li class="list-group-item">Bootstrap (for front-end styling)</li>
+        </ul>
+    </div>
+
+    <div class="mt-4">
+        <h2 class="text-success">Getting Started</h2>
+        <h3 class="text-info">Prerequisites</h3>
+        <ul class="list-group">
+            <li class="list-group-item">.NET Core SDK</li>
+            <li class="list-group-item">Visual Studio or Visual Studio Code</li>
+            <li class="list-group-item">SQLite3 (or your preferred database)</li>
+        </ul>
+
+        <h3 class="text-info mt-3">Installation</h3>
+        <ol class="list-group">
+            <li class="list-group-item">Clone the repository:
+                <pre><code>git clone https://github.com/cleancoder1016/MyMvcApp.git</code></pre>
+            </li>
+            <li class="list-group-item">Navigate to the project directory:
+                <pre><code>cd MyMvcApp</code></pre>
+            </li>
+            <li class="list-group-item">Install the required packages:
+                <pre><code>dotnet restore</code></pre>
+            </li>
+            <li class="list-group-item">Apply the database migrations:
+                <pre><code>dotnet ef database update</code></pre>
+            </li>
+            <li class="list-group-item">Run the application:
+                <pre><code>dotnet run</code></pre>
+            </li>
+        </ol>
+    </div>
+
+    <div class="mt-4">
+        <h2 class="text-success">Usage</h2>
+        <ol class="list-group">
+            <li class="list-group-item">Open your browser and navigate to <code>http://localhost:5079</code>.</li>
+            <li class="list-group-item">Use the provided interface to manage users.</li>
+        </ol>
+    </div>
+
+    <div class="mt-4">
+        <h2 class="text-success">Project Structure</h2>
+        <ul class="list-group">
+            <li class="list-group-item"><strong>Controllers</strong>: Contains the MVC controllers.
+                <ul>
+                    <li class="list-group-item">Api:
+                        <ul>
+                            <li class="list-group-item">UsersController.cs: Contains an API controller for managing user-related operations. It uses dependency injection to access the IUserRepo repository for user data. The controller is decorated with [Route("api/[controller]")] and [ApiController] attributes, indicating it handles API requests at the <code>http://localhost:5079/api/Users</code> endpoint. This gives you a JSON output.</li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">HomeController.cs: Handles requests for the home and privacy pages, utilizing logging and returning views for these actions.</li>
+                    <li class="list-group-item">UsersController.cs: Manages CRUD operations for user entities via endpoint <code>http://localhost:5079/Users</code>.</li>
+                </ul>
+            </li>
+            <li class="list-group-item"><strong>Models</strong>: Contains the data models.</li>
+            <li class="list-group-item"><strong>Views</strong>: Contains the Razor views.</li>
+            <li class="list-group-item"><strong>Data</strong>: Contains classes related to data access and data context.</li>
+            <li class="list-group-item"><strong>wwwroot</strong>: Contains static files like CSS and JavaScript.</li>
+        </ul>
+    </div>
+
+    <div class="mt-4">
+        <h2 class="text-success">Contributing</h2>
+        <p>Contributions are welcome! Please fork the repository and submit a pull request.</p>
+    </div>
+
+    <div class="mt-4">
+        <h2 class="text-success">License</h2>
+        <p>This project is licensed under the MIT License.</p>
+    </div>
 </div>

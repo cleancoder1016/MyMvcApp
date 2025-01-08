@@ -72,3 +72,11 @@ Contributions are welcome! Please fork the repository and submit a pull request.
 ## License
 
 This project is licensed under the MIT License.
+
+## Project Images
+
+Here are some screenshots of the application in action:
+
+![Home Page](Images/home.png)
+![User Page](Images/user_list.png)
+![Privacy Page](Images/privacy.png) 
